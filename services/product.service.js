@@ -62,10 +62,11 @@ class ProductsService{
         };
         return this.products[index];
     }
+    
     async delete(id){
-        const index = this.products.findIndex(item =>item.id === id);
+        const index = this.products.findIndex(item => item.id === id);
         if (index === -1){
-            throw boom.notFound('product not found');
+            throw boom.notFound('no esta');
         }
         this.products.splice(index, 1);
         return { id };
